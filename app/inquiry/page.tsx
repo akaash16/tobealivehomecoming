@@ -29,7 +29,7 @@ const iconCircle =
 const numberCol = `${orientationSerif.className} min-w-[32px] shrink-0 text-[22px] font-normal leading-none text-[#B5703B]`;
 
 /**
- * Orientation: wordmark, centered hero, stacked frosted cards, Begin (email + Start → session).
+ * Orientation: centered hero, stacked frosted cards, Begin (email + Start → session).
  */
 export default function InquiryPage() {
   const router = useRouter();
@@ -83,10 +83,8 @@ export default function InquiryPage() {
   return (
     <div className="relative min-h-dvh overflow-x-hidden">
       <AtmosphereLayer variant="orientation" />
-      <p className="fixed left-0 top-0 z-20 p-6 text-sm font-medium text-[#3D2E1F]">
-        To Be Alive — Homecoming
-      </p>
-      <div className="relative z-10 flex min-h-dvh flex-col px-5 pb-12 pt-14 sm:px-8 sm:pb-16 sm:pt-16 md:pb-20 md:pt-20">
+      <div className="relative z-10 flex min-h-dvh flex-col">
+        <div className="flex flex-col px-5 pb-12 pt-12 sm:px-8 sm:pb-16 sm:pt-16 md:pb-20 md:pt-20">
         <header className="mx-auto mb-12 max-w-xl text-center sm:mb-14 md:mb-16">
           <h1
             className={`${orientationSerif.className} text-[1.75rem] font-medium leading-[1.12] tracking-[-0.02em] text-ink sm:text-[2rem] sm:leading-[1.1]`}
@@ -319,6 +317,7 @@ export default function InquiryPage() {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>
