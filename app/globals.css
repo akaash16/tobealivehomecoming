@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+/*
+  Light warm UI — oat-milk / sandy beige canvas, rich warm browns for type,
+  cream surfaces, amber–terracotta accents only on controls (never a dark page).
+*/
+
+:root {
+  --canvas: #f5f0e8;
+  --canvas-mid: #ede6dc;
+  --paper: #fffcf8;
+  --blush: #fbf6f1;
+  --sand: #f3ebe3;
+
+  /* Rich warm brown headings; softer brown body — never pure black */
+  --ink: #3d2e1f;
+  --ink-muted: #6b5a48;
+  --ink-faint: #9a8478;
+
+  /* Muted amber / terracotta — primary actions; hover goes slightly deeper */
+  --ember: #c8764a;
+  --ember-deep: #b5623a;
+  --ember-hover: #9e522e;
+  --ember-mist: #f3e5db;
+
+  /* Bubbles: cream-on-sand, both light */
+  --bubble-user: #faede5;
+  --bubble-guide: #fffbf7;
+
+  --shadow-soft: 0 2px 24px rgb(61 43 31 / 0.05);
+  --shadow-lift: 0 10px 32px rgb(61 43 31 / 0.07);
+
+  --ease-out-soft: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --t-hover: 260ms;
+
+  --background: var(--canvas);
+  --foreground: var(--ink);
+}
+
+@theme inline {
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+
+  --color-canvas: var(--canvas);
+  --color-canvas-mid: var(--canvas-mid);
+  --color-paper: var(--paper);
+  --color-blush: var(--blush);
+  --color-sand: var(--sand);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+  --color-ember: var(--ember);
+  --color-ember-deep: var(--ember-deep);
+  --color-ember-hover: var(--ember-hover);
+  --color-ember-mist: var(--ember-mist);
+  --color-bubble-user: var(--bubble-user);
+  --color-bubble-guide: var(--bubble-guide);
+
+  --color-background: var(--canvas);
+  --color-foreground: var(--ink);
+
+  --shadow-soft: var(--shadow-soft);
+  --shadow-lift: var(--shadow-lift);
+}
+
+body {
+  min-height: 100dvh;
+  color: var(--ink);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  background-color: var(--canvas);
+}
+
+::selection {
+  background: var(--ember-mist);
+  color: var(--ink);
+}
+
+/* Session chat: new messages ease in (used by app/inquiry/session/page.tsx) */
+@keyframes chat-message-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chat-message-enter {
+  animation: chat-message-in 380ms var(--ease-out-soft) forwards;
+}

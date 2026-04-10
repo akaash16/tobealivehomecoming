@@ -1,0 +1,46 @@
+# Homecoming — Project Rules
+
+## What this is
+A guided self-inquiry web app. Someone comes in with whatever is on their mind — a decision, feeling stuck, low energy, confusion — and the app facilitates a process of dropping beneath the surface-level story to make contact with what's actually true. It does not diagnose, categorize, or prescribe. It holds space for clarity to emerge.
+
+At the end of the process, there is a natural invitation to explore further through coaching.
+
+## Tech stack
+- Next.js with App Router
+- TypeScript
+- Tailwind CSS
+- Anthropic API (for AI conversation, added later)
+- Supabase (for database, added later)
+
+## Important: Project structure
+- This project uses app/ at the root (not src/app/)
+- All pages go in the app/ directory
+
+## Design principles
+- Minimal, warm, precise. Not corporate. Not cheesy self-help.
+- The tone is honest, grounded, and emotionally intelligent.
+- The UI should feel spacious, calm, and intentional.
+- No jargon. No frameworks. No productivity language.
+- Think high-end meditation app meets clean product design.
+- When in doubt, less is more.
+
+## Coding principles
+- I am a complete beginner with zero coding experience. Explain what you create and why.
+- Build in small steps. Do not do too much at once.
+- Use clear, readable code with comments explaining what each section does.
+- One component per file.
+- Use Tailwind for all styling. No separate CSS files except globals.css.
+- When I ask you to fix an error, explain the cause first, then propose the fix.
+- Do not refactor or reorganize code unless I specifically ask for it.
+
+## App structure
+- Landing page at / (app/page.tsx)
+- Entry point selection at /inquiry (app/inquiry/page.tsx)
+- AI conversation session at /inquiry/session (app/inquiry/session/page.tsx)
+- More pages may be added later
+
+## Naming
+- Working title: "Homecoming" (full wordmark: "To Be Alive — Homecoming")
+- Name will likely change. Do not hardcode it in ways that are hard to find and replace later.
+- The philosophy: most people don't need more advice — they need to hear themselves clearly enough that the right move becomes obvious.
+- All copy is placeholder for now. Priority is structure and feel, not final wording.
