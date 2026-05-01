@@ -354,11 +354,15 @@ function InquirySessionPage() {
           setMessages((prev) => {
             if (!noTranscript) {
               const conversation = messagesToTranscriptConversation(prev);
-              if (conversation.length > 0) {
+              const conversationWithSummary = [
+                ...conversation,
+                { role: "guide" as const, text: summaryText },
+              ];
+              if (conversationWithSummary.length > 0) {
                 void fetch("/api/transcript", {
                   method: "POST",
                   headers: { "Content-Type": "application/json" },
-                  body: JSON.stringify({ conversation }),
+                  body: JSON.stringify({ conversation: conversationWithSummary }),
                 })
                   .then(async (res) => {
                     if (!res.ok) {
