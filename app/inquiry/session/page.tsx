@@ -482,7 +482,7 @@ function InquirySessionPage() {
     (userMessageCount >= MAX_USER_MESSAGES && !awaitingFinalReflection);
 
   return (
-    <div className="relative flex h-dvh min-h-0 min-w-0 flex-col overflow-hidden">
+    <div className="relative flex h-dvh w-full min-h-0 min-w-0 max-w-full flex-col overflow-x-hidden overflow-y-hidden">
       <AtmosphereLayer variant="session" />
       {showEndSession && !sessionFullyClosed && (
         <button

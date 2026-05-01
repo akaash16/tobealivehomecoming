@@ -29,7 +29,9 @@ export default function RootLayout({
       lang="en"
       className={`${dmSans.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="flex min-h-full flex-col font-sans">{children}</body>
+      <body className="flex min-h-full flex-col overflow-x-hidden font-sans">
+        {children}
+      </body>
     </html>
   );
 }
