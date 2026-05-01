@@ -627,51 +627,53 @@ function InquirySessionPage() {
           </div>
         </div>
 
-        <div className="shrink-0 border-t border-ink/[0.08] bg-sand/95 px-8 py-6 backdrop-blur-md sm:px-10 sm:py-7">
-          {!sessionFullyClosed ? (
-            <form
-              onSubmit={handleSubmit}
-              className="mx-auto flex max-w-2xl flex-col gap-4 sm:flex-row sm:items-end sm:gap-4"
-            >
-              <div className="flex min-w-0 flex-1 flex-col gap-1.5">
-                <label htmlFor="session-message" className="sr-only">
-                  Your message
-                </label>
-                <textarea
-                  id="session-message"
-                  value={draft}
-                  onChange={(e) =>
-                    setDraft(e.target.value.slice(0, MAX_INPUT_CHARS))
-                  }
-                  onKeyDown={handleKeyDown}
-                  placeholder="What's on your mind?"
-                  rows={2}
-                  maxLength={MAX_INPUT_CHARS}
-                  disabled={inputLocked}
-                  className="min-h-[3.25rem] w-full resize-y rounded-2xl border border-ink/[0.08] bg-paper px-5 py-3.5 text-[0.9375rem] leading-[1.65] text-ink shadow-inner transition-[border-color,box-shadow] duration-[var(--t-hover)] ease-[var(--ease-out-soft)] placeholder:text-ink-faint focus:border-ember/35 focus:outline-none focus:ring-2 focus:ring-ember-mist disabled:cursor-not-allowed disabled:opacity-60 sm:min-h-[3.5rem] sm:text-base"
-                />
-                {draft.length > CHAR_COUNT_VISIBLE_AFTER ? (
-                  <p className="text-right text-[0.7rem] tabular-nums text-ink-faint sm:text-xs">
-                    {draft.length.toLocaleString()} /{" "}
-                    {MAX_INPUT_CHARS.toLocaleString()}
-                  </p>
-                ) : null}
-              </div>
-              <button
-                type="submit"
-                disabled={!draft.trim() || inputLocked}
-                className="inline-flex h-12 shrink-0 items-center justify-center rounded-2xl bg-ember-deep px-10 text-sm font-semibold tracking-wide text-paper shadow-soft transition-[background-color,opacity,transform,box-shadow] duration-[var(--t-hover)] ease-[var(--ease-out-soft)] hover:bg-ember-hover hover:shadow-lift hover:-translate-y-0.5 disabled:pointer-events-none disabled:translate-y-0 disabled:opacity-35 sm:h-[3.5rem] sm:self-stretch sm:px-12"
+        <div className="shrink-0 w-full min-w-0 border-t border-ink/[0.08] bg-sand/95 px-8 py-6 backdrop-blur-md sm:px-10 sm:py-7">
+          <div className="mx-auto w-full min-w-0 max-w-2xl">
+            {!sessionFullyClosed ? (
+              <form
+                onSubmit={handleSubmit}
+                className="flex w-full min-w-0 flex-col gap-4 sm:flex-row sm:items-end sm:gap-4"
               >
-                Send
-              </button>
-            </form>
-          ) : (
-            <div className="mx-auto w-full max-w-2xl py-6 text-center sm:py-8">
-              <p className="text-sm leading-relaxed text-ink-muted sm:text-base sm:whitespace-nowrap">
-                Thanks for being here. This conversation is yours to keep.
-              </p>
-            </div>
-          )}
+                <div className="flex min-w-0 flex-1 flex-col gap-1.5">
+                  <label htmlFor="session-message" className="sr-only">
+                    Your message
+                  </label>
+                  <textarea
+                    id="session-message"
+                    value={draft}
+                    onChange={(e) =>
+                      setDraft(e.target.value.slice(0, MAX_INPUT_CHARS))
+                    }
+                    onKeyDown={handleKeyDown}
+                    placeholder="What's on your mind?"
+                    rows={2}
+                    maxLength={MAX_INPUT_CHARS}
+                    disabled={inputLocked}
+                    className="min-h-[3.25rem] w-full max-w-full resize-y rounded-2xl border border-ink/[0.08] bg-paper px-5 py-3.5 text-[0.9375rem] leading-[1.65] text-ink shadow-inner transition-[border-color,box-shadow] duration-[var(--t-hover)] ease-[var(--ease-out-soft)] placeholder:text-ink-faint focus:border-ember/35 focus:outline-none focus:ring-2 focus:ring-ember-mist disabled:cursor-not-allowed disabled:opacity-60 sm:min-h-[3.5rem] sm:text-base"
+                  />
+                  {draft.length > CHAR_COUNT_VISIBLE_AFTER ? (
+                    <p className="text-right text-[0.7rem] tabular-nums text-ink-faint sm:text-xs">
+                      {draft.length.toLocaleString()} /{" "}
+                      {MAX_INPUT_CHARS.toLocaleString()}
+                    </p>
+                  ) : null}
+                </div>
+                <button
+                  type="submit"
+                  disabled={!draft.trim() || inputLocked}
+                  className="inline-flex h-12 w-full min-w-0 shrink-0 items-center justify-center rounded-2xl bg-ember-deep px-10 text-sm font-semibold tracking-wide text-paper shadow-soft transition-[background-color,opacity,transform,box-shadow] duration-[var(--t-hover)] ease-[var(--ease-out-soft)] hover:bg-ember-hover hover:shadow-lift hover:-translate-y-0.5 disabled:pointer-events-none disabled:translate-y-0 disabled:opacity-35 sm:h-[3.5rem] sm:w-auto sm:self-stretch sm:px-12"
+                >
+                  Send
+                </button>
+              </form>
+            ) : (
+              <div className="py-6 text-center sm:py-8">
+                <p className="text-sm leading-relaxed text-ink-muted sm:text-base sm:whitespace-nowrap">
+                  Thanks for being here. This conversation is yours to keep.
+                </p>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
