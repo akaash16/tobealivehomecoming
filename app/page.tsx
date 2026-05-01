@@ -87,7 +87,28 @@ export default function Home() {
                   xmlns="http://www.w3.org/2000/svg"
                   aria-hidden
                 >
-                  <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="1.35" />
+                  <rect
+                    x="6.5"
+                    y="10.5"
+                    width="11"
+                    height="8"
+                    rx="1.7"
+                    stroke="currentColor"
+                    strokeWidth="1.35"
+                  />
+                  <path
+                    d="M9 10.5V8.4C9 6.75 10.35 5.4 12 5.4C13.65 5.4 15 6.75 15 8.4V10.5"
+                    stroke="currentColor"
+                    strokeWidth="1.35"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M12 13.2V15.8"
+                    stroke="currentColor"
+                    strokeWidth="1.35"
+                    strokeLinecap="round"
+                  />
                 </svg>
                 <span>Private</span>
               </li>

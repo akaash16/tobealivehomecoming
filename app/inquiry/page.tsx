@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Cormorant } from "next/font/google";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -84,6 +85,31 @@ export default function InquiryPage() {
     <div className="relative min-h-dvh overflow-x-hidden">
       <AtmosphereLayer variant="orientation" />
       <div className="relative z-10 flex min-h-dvh flex-col">
+        <Link
+          href="/"
+          className="group absolute left-5 top-12 z-20 inline-flex text-[#6B5A48] sm:left-8 sm:top-16 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember/30"
+          aria-label="Back to home"
+        >
+          <span
+            className={`${iconCircle} transition-[background-color,border-color,transform] duration-[var(--t-hover)] ease-[var(--ease-out-soft)] group-hover:scale-[1.03] group-hover:border-[rgba(184,149,106,0.35)] group-hover:bg-[rgba(255,255,255,0.88)]`}
+          >
+            <svg
+              className="h-4 w-4 scale-x-[-1]"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden
+            >
+              <path
+                d="M3 8h8.5M9.5 5L13 8l-3.5 3"
+                stroke="currentColor"
+                strokeWidth="1.25"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </span>
+        </Link>
         <div className="flex flex-col px-5 pb-12 pt-12 sm:px-8 sm:pb-16 sm:pt-16 md:pb-20 md:pt-20">
         <header className="mx-auto mb-12 max-w-xl text-center sm:mb-14 md:mb-16">
           <h1
