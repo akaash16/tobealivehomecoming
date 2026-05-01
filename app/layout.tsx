@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 
@@ -11,6 +11,12 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Homecoming",
   description: "A quiet space to hear yourself clearly.",
+};
+
+/** Ensures correct scaling on mobile (equivalent to the classic viewport meta tag). */
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({

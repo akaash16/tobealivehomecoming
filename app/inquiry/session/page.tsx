@@ -482,21 +482,21 @@ function InquirySessionPage() {
     (userMessageCount >= MAX_USER_MESSAGES && !awaitingFinalReflection);
 
   return (
-    <div className="relative flex h-dvh min-h-0 flex-col overflow-hidden">
+    <div className="relative flex h-dvh min-h-0 min-w-0 flex-col overflow-hidden">
       <AtmosphereLayer variant="session" />
       {showEndSession && !sessionFullyClosed && (
         <button
           type="button"
           onClick={() => void sendSessionEnd()}
           disabled={isAwaitingReply}
-          className="fixed right-4 top-[5.25rem] z-40 rounded-full border border-ink/[0.1] bg-paper/95 px-4 py-2 text-xs font-medium text-ink-muted shadow-soft backdrop-blur-sm transition-[background-color,border-color,color,opacity] duration-[var(--t-hover)] ease-[var(--ease-out-soft)] hover:border-ember/25 hover:bg-ember-mist/50 hover:text-ink disabled:pointer-events-none disabled:opacity-50 sm:right-6 sm:top-[5.5rem] sm:text-sm"
+          className="fixed right-8 top-[5.25rem] z-40 rounded-full border border-ink/[0.1] bg-paper/95 px-4 py-2 text-xs font-medium text-ink-muted shadow-soft backdrop-blur-sm transition-[background-color,border-color,color,opacity] duration-[var(--t-hover)] ease-[var(--ease-out-soft)] hover:border-ember/25 hover:bg-ember-mist/50 hover:text-ink disabled:pointer-events-none disabled:opacity-50 sm:right-10 sm:top-[5.5rem] sm:text-sm"
         >
           End session
         </button>
       )}
 
-      <header className="relative z-30 flex shrink-0 items-center justify-between gap-4 border-b border-ink/[0.08] bg-canvas/90 px-5 py-5 backdrop-blur-md sm:px-8">
-        <p className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-ink-faint">
+      <header className="relative z-30 flex shrink-0 items-center justify-between gap-4 border-b border-ink/[0.08] bg-canvas/90 px-8 py-5 backdrop-blur-md sm:px-10">
+        <p className="min-w-0 flex-1 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-ink-faint">
           Homecoming
         </p>
         <Link
@@ -507,9 +507,9 @@ function InquirySessionPage() {
         </Link>
       </header>
 
-      <div className="relative z-10 flex min-h-0 flex-1 flex-col overflow-hidden">
-        <div className="min-h-0 flex-1 overflow-y-auto px-5 py-10 sm:px-8 sm:py-12">
-          <div className="mx-auto flex max-w-2xl flex-col gap-5 pb-6">
+      <div className="relative z-10 flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden">
+        <div className="min-h-0 min-w-0 flex-1 overflow-y-auto overflow-x-hidden px-8 py-10 sm:px-10 sm:py-12">
+          <div className="mx-auto flex w-full min-w-0 max-w-2xl flex-col gap-5 pb-6">
             {messages.map((m) =>
               m.role === "notice" ? (
                 <p
@@ -627,7 +627,7 @@ function InquirySessionPage() {
           </div>
         </div>
 
-        <div className="shrink-0 border-t border-ink/[0.08] bg-sand/95 px-5 py-6 backdrop-blur-md sm:px-8 sm:py-7">
+        <div className="shrink-0 border-t border-ink/[0.08] bg-sand/95 px-8 py-6 backdrop-blur-md sm:px-10 sm:py-7">
           {!sessionFullyClosed ? (
             <form
               onSubmit={handleSubmit}
@@ -666,7 +666,7 @@ function InquirySessionPage() {
               </button>
             </form>
           ) : (
-            <div className="mx-auto w-full max-w-full px-4 py-6 text-center sm:px-6 sm:py-8 md:px-10">
+            <div className="mx-auto w-full max-w-2xl py-6 text-center sm:py-8">
               <p className="text-sm leading-relaxed text-ink-muted sm:text-base sm:whitespace-nowrap">
                 Thanks for being here. This conversation is yours to keep.
               </p>
