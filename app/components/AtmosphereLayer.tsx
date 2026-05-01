@@ -33,13 +33,14 @@ export function AtmosphereLayer({ variant }: { variant: AtmosphereVariant }) {
   const vivid = !isSession;
 
   return (
-    <svg
-      className="pointer-events-none absolute inset-0 z-0 h-full w-full"
-      viewBox={viewBox}
-      preserveAspectRatio="xMidYMid slice"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden
-    >
+    <div className="pointer-events-none absolute inset-0 z-0 min-h-0 min-w-0 overflow-hidden">
+      <svg
+        className="h-full w-full max-w-full min-w-0"
+        viewBox={viewBox}
+        preserveAspectRatio="xMidYMid slice"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden
+      >
       <defs>
         <linearGradient id="atmo-sun-core" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop
@@ -273,6 +274,7 @@ export function AtmosphereLayer({ variant }: { variant: AtmosphereVariant }) {
           />
         </>
       )}
-    </svg>
+      </svg>
+    </div>
   );
 }

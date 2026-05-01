@@ -482,7 +482,7 @@ function InquirySessionPage() {
     (userMessageCount >= MAX_USER_MESSAGES && !awaitingFinalReflection);
 
   return (
-    <div className="relative flex h-dvh w-full min-h-0 min-w-0 max-w-full flex-col overflow-x-hidden overflow-y-hidden">
+    <div className="relative flex h-dvh w-full min-h-0 min-w-0 max-w-[100vw] flex-col overflow-x-hidden overflow-y-hidden">
       <AtmosphereLayer variant="session" />
       {showEndSession && !sessionFullyClosed && (
         <button
@@ -496,7 +496,7 @@ function InquirySessionPage() {
       )}
 
       <header className="relative z-30 flex shrink-0 items-center justify-between gap-4 border-b border-ink/[0.08] bg-canvas/90 px-4 py-5 backdrop-blur-md sm:px-10">
-        <p className="min-w-0 flex-1 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-ink-faint">
+        <p className="min-w-0 flex-1 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-ink-faint sm:tracking-[0.2em]">
           Homecoming
         </p>
         <Link
@@ -640,6 +640,7 @@ function InquirySessionPage() {
                   </label>
                   <textarea
                     id="session-message"
+                    cols={1}
                     value={draft}
                     onChange={(e) =>
                       setDraft(e.target.value.slice(0, MAX_INPUT_CHARS))
@@ -649,7 +650,8 @@ function InquirySessionPage() {
                     rows={2}
                     maxLength={MAX_INPUT_CHARS}
                     disabled={inputLocked}
-                    className="min-h-[3.25rem] w-full max-w-full resize-y rounded-2xl border border-ink/[0.08] bg-paper px-5 py-3.5 text-[0.9375rem] leading-[1.65] text-ink shadow-inner transition-[border-color,box-shadow] duration-[var(--t-hover)] ease-[var(--ease-out-soft)] placeholder:text-ink-faint focus:border-ember/35 focus:outline-none focus:ring-2 focus:ring-ember-mist disabled:cursor-not-allowed disabled:opacity-60 sm:min-h-[3.5rem] sm:text-base"
+                    style={{ width: "100%", minWidth: 0 }}
+                    className="min-h-[3.25rem] min-w-0 w-full max-w-full resize-y rounded-2xl border border-ink/[0.08] bg-paper px-5 py-3.5 text-[0.9375rem] leading-[1.65] text-ink shadow-inner transition-[border-color,box-shadow] duration-[var(--t-hover)] ease-[var(--ease-out-soft)] placeholder:text-ink-faint focus:border-ember/35 focus:outline-none focus:ring-2 focus:ring-ember-mist disabled:cursor-not-allowed disabled:opacity-60 sm:min-h-[3.5rem] sm:text-base"
                   />
                   {draft.length > CHAR_COUNT_VISIBLE_AFTER ? (
                     <p className="text-right text-[0.7rem] tabular-nums text-ink-faint sm:text-xs">
