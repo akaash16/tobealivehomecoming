@@ -81,7 +81,7 @@ function CoachingCtaButton() {
   return (
     <div className="my-6 flex w-full justify-center sm:justify-start">
       <a
-        href="#"
+        href="https://calendly.com/subtlyakaash/coffee-chat"
         className="inline-flex items-center justify-center rounded-2xl bg-ember-deep px-8 py-3.5 text-center text-base font-semibold tracking-wide text-paper shadow-lift transition-[background-color,transform,box-shadow] duration-[var(--t-hover)] ease-[var(--ease-out-soft)] hover:bg-ember-hover hover:shadow-soft hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember/40"
       >
         Schedule time with Akaash
