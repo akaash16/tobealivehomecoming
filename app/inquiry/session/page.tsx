@@ -18,9 +18,10 @@ import { SummaryTakeawayBody } from "./SummaryTakeawayBody";
 /** Shown on load only; never sent to /api/chat or included in apiHistoryRef. */
 const STATIC_WELCOME_ID = "local-guide-welcome";
 const STATIC_WELCOME_TEXT =
-  "Thanks for being here. Be as open and honest as you can — the more honest you are, the more this will give back to you. The session will last about five minutes before I suggest wrapping up and putting together a summary. Whenever you're ready, share what's on your mind.";
+  "Thanks for being here. Be as open and honest as you can — the more honest you are, the more this will give back to you. After a minute or so I'll check in, and you can keep going for as long as you like. Whenever you're ready, share what's on your mind.";
 
-const SESSION_MS = 5 * 60 * 1000;
+// DEMO: set to 1 minute for Friday's interview. Original value: 5 minutes.
+const SESSION_CHECKIN_DELAY_MS = 1 * 60 * 1000;
 const SESSION_CHECKIN_TOKEN = "[SESSION_CHECKIN]";
 const SESSION_COMPLETE_TOKEN = "[SESSION_COMPLETE]";
 const KEEP_GOING_TEXT = "I want to keep going";
@@ -238,7 +239,7 @@ function InquirySessionPage() {
     timerRef.current = setTimeout(() => {
       pendingCheckInRef.current = true;
       flushPendingCheckIn();
-    }, SESSION_MS);
+    }, SESSION_CHECKIN_DELAY_MS);
   }
 
   async function runCheckIn() {
@@ -576,7 +577,7 @@ function InquirySessionPage() {
             {checkInOpen && (
               <div className="chat-message-enter flex flex-col gap-4 sm:gap-5">
                 <div className="max-w-[min(92%,32rem)] rounded-2xl rounded-bl-md border border-ink/[0.07] bg-bubble-guide px-5 py-3.5 text-[0.9375rem] leading-[1.65] text-ink shadow-soft sm:px-6 sm:py-4 sm:text-base">
-                  Before we keep going — we&apos;ve been here for a few minutes.
+                  Before we keep going — we&apos;ve been here for a minute or so.
                 </div>
                 <div className="flex flex-wrap gap-3 sm:gap-4">
                   <button

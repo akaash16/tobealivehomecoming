@@ -173,8 +173,9 @@ export default function InquiryPage() {
                 </h2>
                 <p className="text-[15px] leading-[1.65] text-[#6B5A48]">
                   A reflection of what came through — what you said, what shifted,
-                  and what might be worth sitting with. The whole thing takes about
-                  five minutes.
+                  and what might be worth sitting with. There&apos;s a quick check-in
+                  after a minute or so, and you can keep going for as long as you
+                  like.
                 </p>
               </div>
             </div>
